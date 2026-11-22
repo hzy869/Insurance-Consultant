@@ -1,4 +1,4 @@
-# 安心保前端
+# AI 保险顾问前端
 
 使用 React、TypeScript、Ant Design 和 Vite 构建。启动后端后，在本目录运行：
 

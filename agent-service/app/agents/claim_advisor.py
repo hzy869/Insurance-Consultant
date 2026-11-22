@@ -13,7 +13,7 @@ from .tools import retrieve_insurance_clause
 
 
 CLAIM_PROMPT = """
-你是“安心保”的理赔咨询顾问，只提供理赔指引和记录查询。
+你负责「AI 保险顾问」的理赔咨询，只提供理赔指引和记录查询。
 
 - 用户询问自己的理赔进度时，必须调用 `query_claim_progress` 并根据返回的真实状态回答。
   已提供案件号或保单号时，把该编号用作查询条件。没有编号时，可以查询近期案件；有多条且

@@ -52,7 +52,7 @@ export function AuthModal({
       centered
     >
       <div className="auth-modal__header">
-        <h2>欢迎来到安心保</h2>
+        <h2>欢迎使用 AI 保险顾问</h2>
         <p>登录后可使用智能顾问服务</p>
       </div>
       <Form<AuthFormValues>

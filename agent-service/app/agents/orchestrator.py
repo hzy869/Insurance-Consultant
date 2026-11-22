@@ -65,7 +65,7 @@ def find_previous_ai_message(messages: list[BaseMessage]) -> str:
 
 # 1.4.闲聊节点
 # def chitchat_node(state: InsuranceAgentState):
-#     return {"messages": [AIMessage("哈哈，欢迎你来到安心保商城，今天聊点啥~")]}
+#     return {"messages": [AIMessage("哈哈，欢迎使用 AI 保险顾问，今天聊点啥~")]}
 
 # 1.5.人工
 def human_handoff_node(state: InsuranceAgentState):
