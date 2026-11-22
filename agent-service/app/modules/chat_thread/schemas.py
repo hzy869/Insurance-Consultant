@@ -1,0 +1,43 @@
+from datetime import datetime
+from typing import Any, Literal
+from uuid import UUID
+
+from pydantic import Field, field_validator, BaseModel
+
+
+class ChatThreadCreate(BaseModel):
+    """创建会话请求"""
+
+    title: str = Field(default="新会话", min_length=1, max_length=200)
+
+    @field_validator("title", mode="before")
+    @classmethod
+    def normalize_title(cls, value: str) -> str:
+        return value.strip() if isinstance(value, str) else value
+
+
+class ChatThreadRename(ChatThreadCreate):
+    title: str = Field(min_length=1, max_length=200)
+
+class ChatThreadResponse(BaseModel):
+    """会话响应"""
+
+    id: UUID
+    title: str
+    created_at: datetime
+    updated_at: datetime
+
+class ChatMessageResponse(BaseModel):
+    """历史消息"""
+
+    role: Literal["user", "assistant"]
+    content: str
+    additional_info: dict[str, Any] | None = None
+
+
+class ChatHistoryResponse(BaseModel):
+    """会话历史响应"""
+
+    thread_id: UUID
+    messages: list[ChatMessageResponse]
+    interrupt: dict[str, Any] | None = None
